@@ -18,8 +18,9 @@
 		51373A1A21ACDE0F008E3CB5 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51373A1921ACDE0F008E3CB5 /* SafariExtensionHandler.swift */; };
 		51373A1C21ACDE0F008E3CB5 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51373A1B21ACDE0F008E3CB5 /* SafariExtensionViewController.swift */; };
 		51373A1F21ACDE0F008E3CB5 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51373A1D21ACDE0F008E3CB5 /* SafariExtensionViewController.xib */; };
-		51373A2221ACDE0F008E3CB5 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 51373A2121ACDE0F008E3CB5 /* script.js */; };
 		51373A2421ACDE0F008E3CB5 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 51373A2321ACDE0F008E3CB5 /* ToolbarItemIcon.pdf */; };
+		51E52C9321AE318100CB9E71 /* DispatchConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E52C9221AE318100CB9E71 /* DispatchConstants.swift */; };
+		51E52C9821AE3DCC00CB9E71 /* build in Resources */ = {isa = PBXBuildFile; fileRef = 51E52C9721AE3DCB00CB9E71 /* build */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,9 +71,11 @@
 		51373A1B21ACDE0F008E3CB5 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
 		51373A1E21ACDE0F008E3CB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		51373A2021ACDE0F008E3CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		51373A2121ACDE0F008E3CB5 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
 		51373A2321ACDE0F008E3CB5 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		51373A2521ACDE0F008E3CB5 /* RNA_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RNA_Extension.entitlements; sourceTree = "<group>"; };
+		51373A3221AD1408008E3CB5 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
+		51E52C9221AE318100CB9E71 /* DispatchConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchConstants.swift; sourceTree = "<group>"; };
+		51E52C9721AE3DCB00CB9E71 /* build */ = {isa = PBXFileReference; lastKnownFileType = folder; path = build; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,13 +158,15 @@
 		51373A1821ACDE0F008E3CB5 /* RNA Extension */ = {
 			isa = PBXGroup;
 			children = (
+				51E52C9721AE3DCB00CB9E71 /* build */,
+				51373A3221AD1408008E3CB5 /* scripts */,
 				51373A1921ACDE0F008E3CB5 /* SafariExtensionHandler.swift */,
 				51373A1B21ACDE0F008E3CB5 /* SafariExtensionViewController.swift */,
 				51373A1D21ACDE0F008E3CB5 /* SafariExtensionViewController.xib */,
 				51373A2021ACDE0F008E3CB5 /* Info.plist */,
-				51373A2121ACDE0F008E3CB5 /* script.js */,
 				51373A2321ACDE0F008E3CB5 /* ToolbarItemIcon.pdf */,
 				51373A2521ACDE0F008E3CB5 /* RNA_Extension.entitlements */,
+				51E52C9221AE318100CB9E71 /* DispatchConstants.swift */,
 			);
 			path = "RNA Extension";
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 			buildPhases = (
 				51373A0D21ACDE0F008E3CB5 /* Sources */,
 				51373A0E21ACDE0F008E3CB5 /* Frameworks */,
+				51E52C9421AE364E00CB9E71 /* ShellScript */,
 				51373A0F21ACDE0F008E3CB5 /* Resources */,
 			);
 			buildRules = (
@@ -287,13 +293,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51E52C9821AE3DCC00CB9E71 /* build in Resources */,
 				51373A2421ACDE0F008E3CB5 /* ToolbarItemIcon.pdf in Resources */,
 				51373A1F21ACDE0F008E3CB5 /* SafariExtensionViewController.xib in Resources */,
-				51373A2221ACDE0F008E3CB5 /* script.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		51E52C9421AE364E00CB9E71 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"RNA Extension\"\nrm -rf build/*\ncp -R scripts/public/* build/\nparcel build scripts/src/index.js -d scripts/dist -o main.js\nmv scripts/dist build/\necho \"safari.self.addEventListener('message', function(safari_e) {console.log('Received message ' + safari_e.name);if (window.top !== window) {return;}\" > build/main.js\ncat build/dist/main.js >> build/main.js\necho \"\\n});\" >> build/main.js\ncd ..\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		513739EF21ACDE0D008E3CB5 /* Sources */ = {
@@ -318,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51373A1C21ACDE0F008E3CB5 /* SafariExtensionViewController.swift in Sources */,
+				51E52C9321AE318100CB9E71 /* DispatchConstants.swift in Sources */,
 				51373A1A21ACDE0F008E3CB5 /* SafariExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

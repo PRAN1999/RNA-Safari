@@ -28,11 +28,38 @@
 		<string>com.apple.Safari.extension</string>
 		<key>NSExtensionPrincipalClass</key>
 		<string>$(PRODUCT_MODULE_NAME).SafariExtensionHandler</string>
+		<key>SFSafariStyleSheet</key>
+		<array>
+			<dict>
+				<key>Style Sheet</key>
+				<string>build/public/bootstrap.min.css</string>
+			</dict>
+			<dict>
+				<key>Style Sheet</key>
+				<string>build/public/popup.css</string>
+			</dict>
+			<dict>
+				<key>Style Sheet</key>
+				<string>build/dist/main.css</string>
+			</dict>
+		</array>
 		<key>SFSafariContentScript</key>
 		<array>
 			<dict>
 				<key>Script</key>
-				<string>script.js</string>
+				<string>build/jquery.min.js</string>
+			</dict>
+			<dict>
+				<key>Script</key>
+				<string>build/main.js</string>
+			</dict>
+			<!-- <dict>
+				<key>Script</key>
+				<string>build/dist/main.js</string>
+			</dict> -->
+			<dict>
+				<key>Script</key>
+				<string>build/background.js</string>
 			</dict>
 		</array>
 		<key>SFSafariToolbarItem</key>
@@ -50,7 +77,7 @@
 		<dict>
 			<key>Allowed Domains</key>
 			<array>
-				<string>*.webkit.org</string>
+				<string>*.reddit.com</string>
 			</array>
 			<key>Level</key>
 			<string>Some</string>
